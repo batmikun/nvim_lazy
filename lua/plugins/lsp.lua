@@ -17,7 +17,15 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
+      diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = false,
+        severity_sort = true,
+      },
+      inlay_hints = {
+        enabled = true,
+      },
       servers = {
         cssls = {},
         zls = {},
