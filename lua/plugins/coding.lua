@@ -16,15 +16,35 @@ return {
     optional = true,
     opts = function(_, opts)
       vim.list_extend(opts.formatters_by_ft, {
-        { ocaml = { "ocamlformat" } },
+        {
+          ocaml = { "ocamlformat" },
+          python = { "black" },
+          rust = { "rustfmt" },
+          javascript = { "eslint_d" },
+          typescript = { "eslint_d" },
+          javascriptreact = { "eslint_d" },
+          typescriptreact = { "eslint_d" },
+          svelte = { "eslint_d" },
+          go = { "gofmt" },
+          zig = { "zigfmt" },
+        },
       })
     end,
   },
   {
     "mfussenegger/nvim_lint.nvim",
     optional = true,
-    opts = function(_, opts)
-      vim.list_extend(opts.linters_by_ft, {})
-    end,
+    opts = {
+      events = { "BufWritePost" },
+      linters_by_ft = {
+        lua = { "luacheck" },
+        python = { "flake8" },
+        javascript = { "eslint_d" },
+        typescript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+        svelte = { "eslint_d" },
+      },
+    },
   },
 }
