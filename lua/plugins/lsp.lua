@@ -6,16 +6,22 @@ return {
         "stylua",
         "luacheck",
         "black",
+        "flake8",
         "selene",
         "shellcheck",
         "shfmt",
         "ocamlformat",
+        "rustfmt",
+        "eslint_d",
       })
     end,
   },
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
+    dependencies = {
+      "hinell/lsp-timeout.nvim",
+    },
     opts = {
       diagnostics = {
         underline = true,
@@ -52,7 +58,7 @@ return {
         },
       },
       inlay_hints = {
-        enabled = true,
+        enabled = false,
       },
       servers = {
         cssls = {},
@@ -62,5 +68,9 @@ return {
         nim_langserver = {},
       },
     },
+  },
+  {
+    "stevanmilic/nvim-lspimport",
+    ft = { "py" },
   },
 }

@@ -17,6 +17,13 @@ return {
         "scss",
         "sql",
         "svelte",
+        "jsonc",
+        "vim",
+        "regex",
+        "lau",
+        "bash",
+        "markdown",
+        "markdown-inline",
       })
     end,
     config = function()
