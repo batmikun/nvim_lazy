@@ -32,21 +32,24 @@ M.implementation = function()
 
   vim.lsp.buf_request(0, "textDocument/implementation", params, function(err, result, ctx, config)
     local bufnr = ctx.bufnr
-    local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
 
-    -- In go code, I do not like to see any mocks for impls
-    if ft == "go" then
-      local new_result = vim.tbl_filter(function(v)
-        return not string.find(v.uri, "mock_")
-      end, result)
+    if bufnr then
+      local ft = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
-      if #new_result > 0 then
-        result = new_result
+      -- In go code, I do not like to see any mocks for impls
+      if ft == "go" then
+        local new_result = vim.tbl_filter(function(v)
+          return not string.find(v.uri, "mock_")
+        end, result)
+
+        if #new_result > 0 then
+          result = new_result
+        end
       end
-    end
 
-    vim.lsp.handlers["textDocument/implementation"](err, result, ctx, config)
-    vim.cmd([[normal! zz]])
+      vim.lsp.handlers["textDocument/implementation"](err, result, ctx, config)
+      vim.cmd([[normal! zz]])
+    end
   end)
 end
 

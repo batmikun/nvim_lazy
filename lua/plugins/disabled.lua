@@ -4,10 +4,6 @@ return {
     enabled = false,
   },
   {
-    "echasnovski/mini.animate",
-    enabled = false,
-  },
-  {
     "nvim-treesitter/nvim-treesitter-context",
     enabled = false,
   },
@@ -17,6 +13,18 @@ return {
   },
   {
     "dstein64/vim-startuptime",
+    enabled = false,
+  },
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
+  {
+    "rcarriaga/nvim-notify",
+    enabled = false,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
     enabled = false,
   },
 }

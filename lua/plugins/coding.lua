@@ -38,7 +38,6 @@ return {
       events = { "BufWritePost" },
       linters_by_ft = {
         lua = { "luacheck" },
-        python = { "flake8" },
         javascript = { "eslint_d" },
         typescript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
@@ -46,5 +45,11 @@ return {
         svelte = { "eslint_d" },
       },
     },
+  },
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = true,
+    cmd = "Neogen",
   },
 }

@@ -20,20 +20,11 @@ return {
         "jsonc",
         "vim",
         "regex",
-        "lau",
+        "lua",
         "bash",
         "markdown",
-        "markdown-inline",
+        "markdown_inline",
       })
-    end,
-    config = function()
-      vim.filetype.add({
-        extension = {
-          mdx = "mdx",
-        },
-      })
-
-      vim.treesitter.language.register("markdown", "mdx")
     end,
   },
 }
