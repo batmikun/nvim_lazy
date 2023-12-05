@@ -25,7 +25,7 @@ keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
 -- term
-keymap.set("n", "<leader>te", ":term<CR>", opts)
+keymap.set("n", "<leader>te", ":split | resize 20 | term<CR>", opts)
 
 -- Split window
 keymap.set("n", "zs", ":split<Return>", opts)
