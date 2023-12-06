@@ -18,6 +18,8 @@ require("lazy").setup({
         colorscheme = "tokyonight",
       },
     },
+
+    { import = "plugins" },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
@@ -25,13 +27,13 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.clangd" },
-    { import = "lazyvim.plugins.extras.lang.elixir" },
     { import = "lazyvim.plugins.extras.lang.cmake" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.docker" },
+
     { import = "lazyvim.plugins.extras.linting.eslint" },
+
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.formatting.black" },
 
@@ -40,9 +42,9 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.test.core" },
 
+    { import = "lazyvim.plugins.extras.util.project" },
+
     { import = "lazyvim.plugins.extras.ui.edgy" },
-    -- import/override with your plugins
-    { import = "plugins" },
   },
   defaults = {
     lazy = true,

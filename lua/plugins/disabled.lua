@@ -16,14 +16,6 @@ return {
     enabled = false,
   },
   {
-    "folke/noice.nvim",
-    enabled = false,
-  },
-  {
-    "rcarriaga/nvim-notify",
-    enabled = false,
-  },
-  {
     "lewis6991/gitsigns.nvim",
     enabled = false,
   },

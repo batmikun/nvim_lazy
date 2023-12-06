@@ -63,9 +63,12 @@ return {
       servers = {
         cssls = {},
         zls = {},
-        ols = {},
+        ols = {
+          command = "ols",
+          filetypes = { "odin" },
+          rootPatterns = { "ols.json" },
+        },
         ocamllsp = {},
-        nim_langserver = {},
       },
     },
   },
